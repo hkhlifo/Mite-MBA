@@ -4,6 +4,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
 import { ReactTyped } from "react-typed";
+import SimpleSidebar from "./components/Sidebar";
+
 const ScrollRevealPage = () => {
   useEffect(() => {
     AOS.init({
@@ -59,7 +61,8 @@ const ScrollRevealPage = () => {
   const currentbookmarks = testimonials.slice(indexfirst, indexlast)
 
   return (
-    <div className="font-poppins text-white -mt-[142px] pt-[142px]">
+    <div className="font-poppins text-white -mt-[142px] pt-[142px] relative">
+      <SimpleSidebar />
       <section className="relative w-full min-h-screen overflow-hidden">
         <video
           autoPlay
@@ -76,7 +79,6 @@ const ScrollRevealPage = () => {
               data-aos="zoom-in"
               data-aos-delay="200"
             >
-              {/* Lead with <span className="text-blue-300">Purpose</span>. Grow with <span className="text-indigo-200">MITE</span> */}
               <ReactTyped strings={[
                 'Lead with <span class="text-blue-300">Purpose</span>^500. Grow with <span class="text-indigo-200">MITE</span>. ',
                 'Build with <span class="text-blue-300">Vision</span>^1000. Succeed with <span class="text-indigo-200">MITE</span>. ',
@@ -93,7 +95,6 @@ const ScrollRevealPage = () => {
                 showCursor
                 cursorChar=" | "
                 contentType="html"
-              // fadeOut
               />
             </h1>
             <h2
@@ -113,7 +114,7 @@ const ScrollRevealPage = () => {
           </div>
         </div>
       </section>
-      <section className="bg-gradient-to-b from-[#e2e8f0] via-indigo-50 to-white text-gray-800 py-12">
+      <section id="program" className="bg-gradient-to-b from-[#e2e8f0] via-indigo-50 to-white text-gray-800 py-12">
         <div className="max-w-5xl mx-auto text-center px-4">
           <h2
             className="text-3xl md:text-5xl font-bold tracking-tight text-[#1e293b] mb-6"
@@ -190,7 +191,7 @@ const ScrollRevealPage = () => {
         </div>
       </section>
       <hr className="w-3/4 border-gray-700 my-2 mx-auto" />
-      <section className="bg-gradient-to-b from-white via-[#f8fafc] to-indigo-50 text-gray-800 py-16">
+      <section id="specializations" className="bg-gradient-to-b from-white via-[#f8fafc] to-indigo-50 text-gray-800 py-16">
         <div className="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#1e293b] mb-6">
             Dual Specializations Offered
@@ -262,7 +263,7 @@ const ScrollRevealPage = () => {
         </div>
         <hr className="w-3/4 border-gray-700 mt-15 mx-auto" />
       </section>
-      <section className="bg-gradient-to-b from-indigo-50 via-white to-[#f8fafc] text-[#1e293b] py-7">
+      <section id="vision" className="bg-gradient-to-b from-indigo-50 via-white to-[#f8fafc] text-[#1e293b] py-7">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-[#1e293b] mb-6" data-aos="fade-up">
             Vision & Mission
@@ -293,7 +294,7 @@ const ScrollRevealPage = () => {
         </div>
         <hr className="w-3/4 border-gray-700 mt-15 mx-auto" />
       </section>
-      <section className="bg-gradient-to-b from-[#f8fafc] via-[#f8fafc] to-indigo-50 py-5 text-[#1e293b]">
+      <section id="placement" className="bg-gradient-to-b from-[#f8fafc] via-[#f8fafc] to-indigo-50 py-5 text-[#1e293b]">
         <div className="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up" data-aos-delay="100">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
             Placement Success
@@ -311,45 +312,7 @@ const ScrollRevealPage = () => {
         </div>
         <hr className="w-3/4 border-gray-700 mt-15 mx-auto" />
       </section>
-      {/* <section className="bg-gradient-to-b from-indigo-50 via-white to-[#f8fafc] py-16 text-[#1e293b]">
-        <div className="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-            Campus Life at MITE
-          </h2>
-          <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10">
-            Experience the vibrant energy of MITE through glimpses of student life, events, and campus culture. From academic excellence to spirited celebrations, our campus is where future leaders thrive.
-          </p>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="200">
-          {[
-            " https://www.youtube.com/embed/-FST-Hk-HwU",
-            " https://www.youtube.com/embed/tx61kRUNfCE",
-            " https://www.youtube.com/embed/BcEcQbHLlM4",
-            " https://www.youtube.com/embed/tMlF2cmM0XI ",
-            " https://www.youtube.com/embed/BD-2nqgy8zk",
-            " https://www.youtube.com/embed/t7NU33DlI3U ",
-            " https://www.youtube.com/embed/x4Hos3xbLyw  ",
-            " https://www.youtube.com/embed/CwknngW-P2I",
-          ].map((src, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-xl shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 ring-1 ring-indigo-100"
-            >
-              <div className="aspect-w-16 aspect-h-9">
-                <iframe
-                  src={src}
-                  title={`Campus Video ${i + 1}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
-      <section className="bg-gradient-to-b from-indigo-50 via-white to-[#f8fafc] py-14 text-[#1e293b]">
+      <section id="campus" className="bg-gradient-to-b from-indigo-50 via-white to-[#f8fafc] py-14 text-[#1e293b]">
         <div className="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
             Campus Life at MITE
@@ -415,9 +378,8 @@ const ScrollRevealPage = () => {
         </div>
         <hr className="w-3/4 border-gray-700 mt-15 mx-auto" />
       </section>
-      <section className="w-full bg-gradient-to-br from-[#f8fafc] via-white to-indigo-100 text-gray-900">
+      <section id="testimonials" className="w-full bg-gradient-to-br from-[#f8fafc] via-white to-indigo-100 text-gray-900">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-center">
-          {/* Voices from the MITE MBA Community */}
           Testimonials
         </h2>
         <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10 text-center">
@@ -464,7 +426,7 @@ const ScrollRevealPage = () => {
                   </div>
                 </div>
                 <p className="text-slate-200 text-base leading-relaxed">
-                  “{testimonial.quote}”
+                  "{testimonial.quote}"
                 </p>
               </div>
             ))}
@@ -476,11 +438,3 @@ const ScrollRevealPage = () => {
 };
 
 export default ScrollRevealPage;
-
-
-
-
-
-
-
-
