@@ -68,6 +68,7 @@ const ScrollRevealPage = () => {
           autoPlay
           muted
           loop
+          poster="/mitehome.jpg"
           className="absolute inset-0 w-full h-full object-cover object-center brightness-100"
         >
           <source src="/mite-mba.mp4" type="video/mp4" />
